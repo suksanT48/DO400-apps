@@ -28,9 +28,12 @@ public class ShoppingCartTest {
 	@BeforeAll
 	public static void setup() {
 		CatalogStorage mockStorage = Mockito.mock(InMemoryCatalogStorage.class);
+		
 		Mockito.when(mockStorage.containsKey(1)).thenReturn(true);
 		Mockito.when(mockStorage.containsKey(9999)).thenReturn(false);
+		
 		Mockito.when(mockStorage.get(1)).thenReturn(new Product(1, 100));
+		
 		QuarkusMock.installMockForType(mockStorage, CatalogStorage.class);
 	}
 
