@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function tag_exists() {
-    curl -sfSL https://quay.io/repositories/$1/tags/$2 &> /dev/null
+    curl -sfSL https://quay.io/v1/repositories/$1/tags/$2 &> /dev/null
 }
 
 echo "Checking the existence of the tag $2 in the repository $1"
